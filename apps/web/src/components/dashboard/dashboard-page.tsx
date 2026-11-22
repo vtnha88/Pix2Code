@@ -57,13 +57,11 @@ export function DashboardPage() {
         </section>
         <aside className="space-y-4">
           <section className="card overflow-hidden">
-            <div className="flex items-center justify-between border-b border-[var(--border-soft)] px-4 py-3.5"><h2 className="section-title text-[13px]">AI model status</h2><span className="badge yellow">Prototype</span></div>
+            <div className="flex items-center justify-between border-b border-[var(--border-soft)] px-4 py-3.5"><h2 className="section-title text-[13px]">AI model status</h2><span className="badge yellow">Not checked</span></div>
             <div className="space-y-3.5 p-4">
-              <StatusRow label="Vision model" value="Not connected" />
-              <StatusRow label="Coding model" value="Not connected" />
-              <StatusRow label="Runtime" value="Ollama not configured" />
-              <div className="rounded-md border border-amber-500/10 bg-amber-500/[.04] px-3 py-2 text-[10px] leading-4 text-zinc-500">Connection states are simulated. No local models are being contacted.</div>
-              <Link href="/models" className="button small w-full justify-center">Configure models <ArrowRight size={13} /></Link>
+              <StatusRow label="Runtime" value="llama.cpp (not checked)" />
+              <div className="rounded-md border border-amber-500/10 bg-amber-500/[.04] px-3 py-2 text-[10px] leading-4 text-zinc-500">Start the local server manually. Screenshot analysis and generation remain simulated.</div>
+              <Link href="/models" className="button small w-full justify-center">Runtime setup <ArrowRight size={13} /></Link>
             </div>
           </section>
           <section className="card p-4">

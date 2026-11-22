@@ -2,6 +2,7 @@
 
 import { useState, useSyncExternalStore } from "react";
 import { useToast } from "@/components/layout/app-shell";
+import Link from "next/link";
 import { Check, FolderOpen, Info, MonitorCog, Palette, Save, SlidersHorizontal, Sparkles } from "lucide-react";
 
 type Settings = { language: string; framework: string; fontSize: string; tabSize: string; wordWrap: boolean; minimap: boolean; theme: string; };
@@ -57,8 +58,7 @@ export function SettingsPage() {
         <SettingsToggle label="Minimap" description="Show a code overview in the editor" checked={settings.minimap} onClick={() => update("minimap", !settings.minimap)} />
       </SettingsSection>
       <SettingsSection title="AI defaults" description="Preferences for a future local inference integration" icon={<Sparkles size={15} />}>
-        <SettingsSelect label="Vision model" description="Default model for screenshot analysis" value="Not connected" options={["Not connected"]} onChange={() => toast("AI settings are planned for a future integration.")} />
-        <SettingsSelect label="Coding model" description="Default model for frontend code" value="Not connected" options={["Not connected"]} onChange={() => toast("AI settings are planned for a future integration.")} />
+        <div className="flex items-center justify-between gap-3 py-3"><div className="text-[11px] text-zinc-300">Local runtime <span className="block pt-1 text-[10px] text-zinc-600">Run llama.cpp separately; in-app model selection is not available yet.</span></div><Link href="/models" className="button small">Setup</Link></div>
         <SettingsSelect label="Correction iterations" description="Maximum visual refinement passes" value="3" options={["1", "2", "3", "5"]} onChange={() => toast("AI settings are planned for a future integration.")} />
       </SettingsSection>
       <SettingsSection title="Storage" description="Local data and cache information" icon={<FolderOpen size={15} />}>

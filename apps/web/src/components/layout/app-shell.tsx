@@ -76,8 +76,8 @@ function AppShellContent({ children }: Readonly<{ children: React.ReactNode }>) 
           </div>
           <div className="sidebar-meta m-3 flex items-center justify-between rounded-md border border-[var(--border-soft)] bg-[#141417] px-2.5 py-2">
             <div className="flex items-center gap-2">
-              <span className="relative size-2 rounded-full bg-amber-400"><span className="absolute inset-0 animate-ping rounded-full bg-amber-400/40" /></span>
-              <span className="text-[11px] text-zinc-300">Local AI Offline</span>
+              <span className="size-2 rounded-full bg-amber-400" />
+              <span className="text-[11px] text-zinc-300">Runtime not checked</span>
             </div>
             <ChevronDown size={13} className="text-zinc-600" />
           </div>
@@ -97,7 +97,7 @@ function AppShellContent({ children }: Readonly<{ children: React.ReactNode }>) 
             ))}
             <div className="sidebar-meta rounded-lg border border-violet-400/15 bg-gradient-to-br from-violet-500/[.10] to-transparent p-3">
               <div className="mb-2 flex items-center gap-2 text-violet-200"><Sparkles size={14} /><span className="text-[11px] font-semibold">Your local workspace</span></div>
-              <p className="m-0 text-[10px] leading-4 text-zinc-500">Prototype mode. Model connections will be available in a future integration.</p>
+              <p className="m-0 text-[10px] leading-4 text-zinc-500">Run llama.cpp separately. In-app inference remains a prototype.</p>
             </div>
           </nav>
           <div className="border-t border-[var(--border-soft)] p-3">
@@ -127,9 +127,9 @@ function AppShellContent({ children }: Readonly<{ children: React.ReactNode }>) 
               ) : null}
               <button type="button" className="icon-button" aria-label="Search" onClick={() => setSearchOpen(!searchOpen)}><Search size={16} /></button>
               <div className="mx-1 hidden h-5 w-px bg-[var(--border)] sm:block" />
-              <button type="button" className="hidden items-center gap-2 rounded-md border border-amber-500/15 bg-amber-500/[.06] px-2.5 py-1.5 text-[10px] text-amber-200 sm:flex" onClick={() => toast("Local runtime status is simulated in this prototype.")}>
-                <span className="size-1.5 rounded-full bg-amber-400" /> Runtime offline
-              </button>
+              <Link href="/models" className="hidden items-center gap-2 rounded-md border border-amber-500/15 bg-amber-500/[.06] px-2.5 py-1.5 text-[10px] text-amber-200 sm:flex">
+                <span className="size-1.5 rounded-full bg-amber-400" /> Runtime not checked
+              </Link>
               <div className="relative">
                 <button type="button" className="icon-button" aria-label="Notifications" onClick={() => setNotificationsOpen(!notificationsOpen)}><Bell size={16} /><span className="absolute right-1 top-1 size-1.5 rounded-full bg-violet-400" /></button>
                 {notificationsOpen && <div className="absolute right-0 top-10 z-30 w-64 rounded-lg border border-[var(--border)] bg-[#17171b] p-3 shadow-xl"><div className="mb-1 text-xs font-semibold">You&apos;re all caught up</div><div className="text-[11px] leading-5 text-zinc-500">New project activity will show up here.</div></div>}

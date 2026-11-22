@@ -208,9 +208,8 @@ export function Workspace({ projectId }: { projectId: string }) {
             <div className="mt-2 text-[9px] text-zinc-700">Editor preview · Monaco integration planned</div>
           </div>}
           {inspectorTab === "AI Settings" && <div className="space-y-4 p-3.5">
-            <div className="rounded-md border border-amber-500/10 bg-amber-500/[.04] p-2.5 text-[10px] leading-4 text-amber-100/70">AI engine will be available in a future integration.</div>
-            <label className="block space-y-1.5"><span className="text-[10px] text-zinc-500">Vision model</span><select className="select text-[10px]" defaultValue=""><option value="">Not connected</option><option disabled>Connect a local runtime first</option></select></label>
-            <label className="block space-y-1.5"><span className="text-[10px] text-zinc-500">Coding model</span><select className="select text-[10px]" defaultValue=""><option value="">Not connected</option><option disabled>Connect a local runtime first</option></select></label>
+            <div className="rounded-md border border-amber-500/10 bg-amber-500/[.04] p-2.5 text-[10px] leading-4 text-amber-100/70">The local runtime is not connected to generation yet. AI generation remains simulated.</div>
+            <Link href="/models" className="button small">Runtime setup</Link>
             <label className="block space-y-2"><span className="flex justify-between text-[10px] text-zinc-500"><span>Temperature</span><span className="font-mono">0.3</span></span><input type="range" min="0" max="1" step="0.1" defaultValue="0.3" className="w-full accent-violet-400" /></label>
             <label className="block space-y-1.5"><span className="text-[10px] text-zinc-500">Max correction iterations</span><select className="select text-[10px]" defaultValue="3"><option>1</option><option>2</option><option>3</option><option>5</option></select></label>
             <button type="button" className="flex w-full items-center justify-between text-[10px] text-zinc-400" onClick={() => setFeedbackEnabled(!feedbackEnabled)}>Visual feedback loop <span className={`switch ${feedbackEnabled ? "on" : ""}`} /></button>
